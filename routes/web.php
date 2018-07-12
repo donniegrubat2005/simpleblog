@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+//Route::group(['middleware' => ['disablepreventback','auth']],function(){
+Route::group(['middleware' => 'disablepreventback'],function(){
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('posts', 'PostController');
+});
