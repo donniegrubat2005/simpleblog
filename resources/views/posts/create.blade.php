@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header">Create Posts</div>
                 <div class="card-body">
-                <form action="{{ url('posts') }}" method="post">
+                <form action="/posts" method="post">
                     {{ csrf_field() }}
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id}}">
                 <div class="formgroup">

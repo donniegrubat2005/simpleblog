@@ -5,8 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard - Posts</div>
-
+                <div class="card-header">Dashboard - Posts
+				<div class="float-right" id="btn-create">
+						<a href="/posts/create" class="btn btn-success">Create</a>
+					</div>
+				</div>
+                
                 <div class="card-body">
                 <table class="table table-table">
                         <thead>
@@ -31,7 +35,7 @@
 								<td><a href="/posts/{{ $post->id }}/edit" class="btn btn-success btn-sm">
 								Edit</a></td>
 								<td>
-									<form action="posts/{{ $post->id }}" method="POST">
+									<form action="/posts/{{ $post->id }}" method="POST">
 										{{ csrf_field() }}
 										{{ method_field('DELETE') }}
 										<button class="btn btn-danger btn-sm">Delete</button>

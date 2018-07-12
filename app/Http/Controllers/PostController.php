@@ -24,6 +24,7 @@ class PostController extends Controller
     {
        Post::create($request->all());
        return redirect('posts');
+    
     }
 
     
@@ -44,6 +45,8 @@ class PostController extends Controller
     {
         $post=Post::findOrFail($id);
         $post->update($request->all());
+
+        return redirect('posts');
     }
 
    

@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header">Edit Posts</div>
                 <div class="card-body">
-                <form action="{{ url('posts') }}" method="post">
+                <form action="/posts/{{ $post->id }}" method="post">
                     {{method_field('PUT')}}
                     {{ csrf_field() }}
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id}}">
