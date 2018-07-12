@@ -11,9 +11,5 @@ class Post extends Model
     ];
 
     
-   public function users()
-
-   {
-    return $this->belongsTo('App\Post', 'foreign_key');
-   }
+   
 }

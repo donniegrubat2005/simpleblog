@@ -4,14 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use DB;
+
+
 
 class PostController extends Controller
 {
     
     public function index()
     {
-        $posts=Post::paginate(7);
+        
+        $posts = DB::table('users')
+            ->leftJoin('posts', 'users.id', '=', 'posts.user_id')
+            ->paginate(7);
         return view('post', compact('posts'));
+        
     }
 
     

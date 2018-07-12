@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Dashboard - Posts
 				<div class="float-right" id="btn-create">
@@ -24,12 +24,13 @@
 							</tr>
 						</thead>
 						@foreach($posts as $post)
+						   
 						<tbody>
 							<tr>
 
 								<td>{{$post->title}}</td>
 								<td>{{$post->content}}</td>
-								<td></td>
+								<td>{{$post->username}}</td>
 								<td>{{$post->created_at}}</td>
 								<td>{{$post->updated_at}}</td>
 								<td><a href="/posts/{{ $post->id }}/edit" class="btn btn-success btn-sm">
@@ -44,6 +45,7 @@
 							</tr>
 
 						</tbody>
+						
 						@endforeach
 					</table>
                 </div>
